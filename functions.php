@@ -15,7 +15,8 @@ add_action('after_setup_theme','clubdesk_setup');
 function clubdesk_scripts() {
     wp_enqueue_style('clubdesk-fonts','https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&subset=latin-ext&display=swap',[],null);
     wp_enqueue_style('clubdesk-brand',get_template_directory_uri().'/assets/css/brand.css',['clubdesk-fonts'],'1.0.0');
-    wp_enqueue_style('clubdesk-style',get_stylesheet_uri(),['clubdesk-brand'],'1.0.0');
+    wp_enqueue_style('clubdesk-landing',get_template_directory_uri().'/assets/css/landing.css',['clubdesk-brand'],'1.0.0');
+    wp_enqueue_style('clubdesk-style',get_stylesheet_uri(),['clubdesk-landing'],'1.0.0');
     wp_enqueue_script('clubdesk-main',get_template_directory_uri().'/assets/js/main.js',[],'1.0.0',true);
 }
 add_action('wp_enqueue_scripts','clubdesk_scripts');
