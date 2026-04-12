@@ -59,3 +59,11 @@ function clubdesk_admin_notice() {
     }
 }
 add_action('admin_notices','clubdesk_admin_notice');
+
+// ── Elementor Widgets ──
+function clubdesk_elementor_init() {
+    if (defined('ELEMENTOR_VERSION')) {
+        require_once get_template_directory() . '/inc/elementor/class-elementor.php';
+    }
+}
+add_action('elementor/init','clubdesk_elementor_init');
