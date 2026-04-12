@@ -13,6 +13,8 @@ class ClubDesk_Shootero_Widget extends \Elementor\Widget_Base {
         $this->add_control('features', ['label'=>'Cechy (po enterze)','type'=>\Elementor\Controls_Manager::TEXTAREA,'default'=>"Zarządzanie bronią i amunicją klubową\nLicencje PZSS i weryfikacja QR\nPełne zarządzanie zawodami\nSystem sędziowski z certyfikacjami\nKarty wynikowe i rankingi\nEwidencja dyscyplin strzeleckich\nBadania lekarskie zawodników\nSkładki i finanse klubowe"]);
         $this->add_control('btn_text', ['label'=>'Przycisk','type'=>\Elementor\Controls_Manager::TEXT,'default'=>'Zapytaj o Shootero']);
         $this->add_control('btn_link', ['label'=>'Link','type'=>\Elementor\Controls_Manager::TEXT,'default'=>'#kontakt']);
+        $this->add_control('link_text', ['label'=>'Link do strony','type'=>\Elementor\Controls_Manager::TEXT,'default'=>'Dowiedz się więcej o Shootero →']);
+        $this->add_control('link_url', ['label'=>'URL strony','type'=>\Elementor\Controls_Manager::TEXT,'default'=>'https://shootero.pl']);
         $this->end_controls_section();
     }
 
@@ -26,7 +28,10 @@ class ClubDesk_Shootero_Widget extends \Elementor\Widget_Base {
               <h2 style="color:#fff"><?php echo esc_html($s['title']); ?></h2>
               <p style="color:rgba(255,255,255,.75)"><?php echo esc_html($s['text']); ?></p>
               <ul class="cd-check-list cd-check-list--light"><?php foreach($feats as $f): ?><li><?php echo esc_html(trim($f)); ?></li><?php endforeach; ?></ul>
-              <a href="<?php echo esc_url($s['btn_link']); ?>" class="cd-btn cd-btn--primary" style="margin-top:1.5rem"><?php echo esc_html($s['btn_text']); ?></a>
+              <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:1.5rem">
+                <a href="<?php echo esc_url($s['btn_link']); ?>" class="cd-btn cd-btn--primary"><?php echo esc_html($s['btn_text']); ?></a>
+                <?php if(!empty($s['link_url'])): ?><a href="<?php echo esc_url($s['link_url']); ?>" target="_blank" rel="noopener" style="color:var(--cd-pink);font-weight:600;font-size:.875rem"><?php echo esc_html($s['link_text']); ?></a><?php endif; ?>
+              </div>
             </div>
             <div class="cd-text-center" style="display:flex;align-items:center;justify-content:center">
               <div class="cd-shootero-logo">

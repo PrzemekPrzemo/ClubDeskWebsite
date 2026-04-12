@@ -15,7 +15,10 @@
           <li>Badania lekarskie zawodników</li>
           <li>Składki i finanse klubowe</li>
         </ul>
-        <a href="#kontakt" class="cd-btn cd-btn--primary" style="margin-top:1.5rem">Zapytaj o Shootero</a>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:1.5rem">
+          <a href="#kontakt" class="cd-btn cd-btn--primary">Zapytaj o Shootero</a>
+          <a href="https://shootero.pl" target="_blank" rel="noopener" style="color:var(--cd-pink);font-weight:600;font-size:.875rem">Dowiedz się więcej o Shootero →</a>
+        </div>
       </div>
       <div class="cd-text-center" style="display:flex;align-items:center;justify-content:center">
         <div class="cd-shootero-logo">
