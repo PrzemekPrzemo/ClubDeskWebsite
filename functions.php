@@ -60,6 +60,24 @@ function clubdesk_admin_notice() {
 }
 add_action('admin_notices','clubdesk_admin_notice');
 
+// ── SVG upload support ──
+function clubdesk_allow_svg($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'clubdesk_allow_svg');
+
+function clubdesk_fix_svg_mime($data, $file, $filename) {
+    if (!empty($data['ext']) && !empty($data['type'])) return $data;
+    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+    if ($ext === 'svg') {
+        $data['ext'] = 'svg';
+        $data['type'] = 'image/svg+xml';
+    }
+    return $data;
+}
+add_filter('wp_check_filetype_and_ext', 'clubdesk_fix_svg_mime', 10, 3);
+
 // ── Elementor Widgets ──
 function clubdesk_elementor_init() {
     if (defined('ELEMENTOR_VERSION')) {
