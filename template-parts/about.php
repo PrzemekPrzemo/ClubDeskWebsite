@@ -14,14 +14,14 @@
       <div class="cd-about-card">
         <div class="cd-about-card__icon"><svg viewBox="0 0 48 48" fill="none" stroke="#EE2C28" stroke-width="2"><circle cx="18" cy="18" r="8"/><circle cx="30" cy="18" r="8"/><circle cx="24" cy="30" r="8"/></svg></div>
         <h3>Wielosportowość</h3>
-        <p>Jeden system dla wielu sekcji sportowych. Piłka nożna, koszykówka, strzelectwo i wiele więcej — jednocześnie.</p>
+        <p>Jeden system dla wielu sekcji sportowych. Piłka nożna, koszycówka, strzelectwo i wiele więcej — jednocześnie.</p>
       </div>
       <div class="cd-about-card">
-        <div class="cd-about-card__icon"><svg viewBox="0 0 48 48" fill="none" stroke="#EE2C28" stroke-width="2"><path d="M24 6L6 18v12l18 12 18-12V18L24 6z"/><path d="M6 18l18 12 18-12M24 30v12"/></svg></div>
-        <h3>Na miarę Twojego klubu</h3>
-        <p>Indywidualna implementacja. Wybierasz moduły, konfigurujemy branding — płacisz tylko za to, czego potrzebujesz.</p>
+        <div class="cd-about-card__icon"><svg viewBox="0 0 48 48" fill="none" stroke="#EE2C28" stroke-width="2"><rect x="8" y="12" width="32" height="22" rx="3"/><path d="M8 18h32"/><rect x="14" y="23" width="8" height="6" rx="1"/><path d="M26 26h8M18 34v4M30 34v4M12 38h24"/></svg></div>
+        <h3>Portal Zawodnika</h3>
+        <p>Każdy członek otrzymuje cyfrową legitymację z kodem QR, wgląd we własne składki, treningi i wyniki — bezpośrednio ze smartfona.</p>
       </div>
     </div>
-    <p class="cd-about-text">ClubDesk to kompleksowy system zarządzania klubem sportowym typu SaaS. Każdy klub otrzymuje własną subdomenę, indywidualny branding i dostęp do modułów dopasowanych do specyfiki jego dyscyplin. System jest ciągle rozwijany we współpracy z naszymi klientami.</p>
+    <p class="cd-about-text">ClubDesk to kompleksowy system zarządzania klubem sportowym typu SaaS. Każdy klub otrzymuje własną subdomenę, indywidualny branding i dostęp do ponad 14 modułów dopasowanych do specyfiki jego dyscyplin. System jest ciągle rozwijany we współpracy z naszymi klientami.</p>
   </div>
 </section>
