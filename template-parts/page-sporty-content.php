@@ -8,7 +8,7 @@ $sporty = [
     'dedykowane' => ['Zarządzanie składem i transfery zawodników','Protokoły meczowe','Tabele ligowe i klasyfikacje','System sędziowski','Planowanie rozgrywek i terminarze','Statystyki meczowe (bramki, kartki, asysty)'],
   ],
   [
-    'nazwa'      => 'Koszycówka',
+    'nazwa'      => 'Koszykówka',
     'federacja'  => 'PZKosz',
     'typ'        => 'team',
     'icon'       => '<svg viewBox="0 0 32 32" fill="none" stroke="#EE2C28" stroke-width="1.5"><circle cx="16" cy="16" r="12"/><path d="M4 16h24M16 4v24M8 7a10 10 0 0 0 0 18M24 7a10 10 0 0 1 0 18"/></svg>',
@@ -55,7 +55,7 @@ $sporty = [
     'federacja'  => 'PZT',
     'typ'        => 'ind',
     'icon'       => '<svg viewBox="0 0 32 32" fill="none" stroke="#EE2C28" stroke-width="1.5"><circle cx="16" cy="16" r="12"/><path d="M6 10c3 1 5 4 5 6s-2 5-5 6M26 10c-3 1-5 4-5 6s2 5 5 6"/></svg>',
-    'dedykowane' => ['Rankingi indywidualne (ATP/WTA style)','Drabinki turniejowe (eliminacje, bracket)','Wyniki meczów i setów','Statystyki serwiów i returnów','Kategorie wiekowe i klasowe','Historia spotkań head-to-head'],
+    'dedykowane' => ['Rankingi indywidualne (ATP/WTA style)','Drabinki turniejowe (eliminacje, bracket)','Wyniki meczów i setów','Statystyki serwów i returnów','Kategorie wiekowe i klasowe','Historia spotkań head-to-head'],
   ],
   [
     'nazwa'      => 'Pływanie',
@@ -92,7 +92,7 @@ $wspolne = 'Każdy sport: zarządzanie członkami, treningi i frekwencja, badani
 <section class="cd-page-hero">
   <div class="cd-container">
     <h1>Sporty obsługiwane przez <span>ClubDesk</span></h1>
-    <p>12 dyscyplin sportowych z dedykowanymi funkcjami dopasowanymi do specyfiki każdego sportu. Jeden system — wszystkie potrzeby Twojego klubu.</p>
+    <p>37 dyscyplin sportowych z dedykowanymi funkcjami dopasowanymi do specyfiki każdego sportu. Jeden system — wszystkie potrzeby Twojego klubu.</p>
     <div class="cd-page-hero__badges">
       <?php foreach($sporty as $s): ?>
         <span><?php echo esc_html($s['federacja']); ?></span>
@@ -104,9 +104,9 @@ $wspolne = 'Każdy sport: zarządzanie członkami, treningi i frekwencja, badani
 <section class="cd-section" id="lista-sportow">
   <div class="cd-container">
     <div class="cd-section__header">
-      <span class="cd-label">Dyscypliny</span>
-      <h2>Pełna lista obsługiwanych sportów</h2>
-      <p>Każdy sport posiada dedykowane moduły. Do tego pełen zestaw wspólnych funkcji dla wszystkich dyscyplin.</p>
+      <span class="cd-label">Dyscypliny — część 1/2</span>
+      <h2>Sporty z pełnym wsparciem</h2>
+      <p>Szczegółowe moduły dedykowane specyfice każdej dyscypliny.</p>
     </div>
     <div class="cd-grid cd-grid--3">
       <?php foreach($sporty as $s): ?>
@@ -147,28 +147,5 @@ $wspolne = 'Każdy sport: zarządzanie członkami, treningi i frekwencja, badani
       </div>
       <?php endforeach; ?>
     </div>
-  </div>
-</section>
-
-<section class="cd-section cd-section--slate">
-  <div class="cd-container">
-    <div class="cd-section__header">
-      <span class="cd-label">Rozszerzalność</span>
-      <h2>Nie widzisz swojego sportu?</h2>
-      <p>Architektura ClubDesk jest w pełni rozszerzalna. Dodanie nowej dyscypliny to kwestia konfiguracji — skontaktuj się z nami.</p>
-    </div>
-    <div class="cd-grid cd-grid--3">
-      <div class="cd-diff"><div class="cd-diff__icon"><svg viewBox="0 0 22 22" fill="none" stroke="#EE2C28" stroke-width="1.5"><path d="M11 2v4M11 16v4M2 11h4M16 11h4"/><circle cx="11" cy="11" r="4"/></svg></div><div><h4>Szybka konfiguracja</h4><p>Nowy sport = wpis w bazie danych + plik manifest. Brak zmian w kodzie platformy.</p></div></div>
-      <div class="cd-diff"><div class="cd-diff__icon"><svg viewBox="0 0 22 22" fill="none" stroke="#EE2C28" stroke-width="1.5"><rect x="2" y="2" width="18" height="18" rx="3"/><path d="M7 11h8M11 7v8"/></svg></div><div><h4>Własne pola danych</h4><p>Każda dyscyplina może mieć własne pola dodatkowe dopasowane do specyfiki sportu.</p></div></div>
-      <div class="cd-diff"><div class="cd-diff__icon"><svg viewBox="0 0 22 22" fill="none" stroke="#EE2C28" stroke-width="1.5"><path d="M11 2L2 7v8l9 5 9-5V7l-9-5z"/></svg></div><div><h4>Współpraca z federacjami</h4><p>Jesteśmy otwarci na wdrożenia dla nowych związków sportowych i dyscyplin niszowych.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="cd-cta-band">
-  <div class="cd-container">
-    <h2>Twój sport jest na liście?</h2>
-    <p>Umów bezpłatną konsultację i zacznij korzystać z ClubDesk już dziś.</p>
-    <a href="<?php echo esc_url(home_url('/#kontakt')); ?>" class="cd-btn cd-btn--white cd-btn--lg">Umów konsultację</a>
   </div>
 </section>
