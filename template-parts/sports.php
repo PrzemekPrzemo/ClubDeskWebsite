@@ -3,17 +3,53 @@
     <div class="cd-section__header">
       <span class="cd-label">Sporty</span>
       <h2>System dla <span class="cd-text-red">każdego</span> sportu</h2>
-      <p>Architektura pluginowa — każdy sport ma dedykowane moduły dopasowane do specyfiki dyscypliny.</p>
+      <p>Architektura pluginowa — każda z <strong>37 dyscyplin</strong> ma dedykowane moduły dopasowane do specyfiki sportu.</p>
     </div>
     <div class="cd-grid cd-grid--6">
       <?php
       $sports = [
-        ['Piłka nożna','PZPN','drużynowy'],['Koszykówka','PZKosz','drużynowy'],
-        ['Siatkówka','PZPS','drużynowy'],['Strzelectwo','PZSS','indywidualny'],
-        ['Lekka atletyka','PZLA','indywidualny'],['Hokej na lodzie','PZHL','drużynowy'],
-        ['Piłka ręczna','ZPRP','drużynowy'],['Tenis','PZT','indywidualny'],
-        ['Pływanie','PZP','indywidualny'],['Judo','PZJ','indywidualny'],
-        ['Karate','PZKarate','indywidualny'],['Wrotkarstwo','PZWrot','indywidualny'],
+        // Sporty drużynowe
+        ['Piłka nożna','PZPN','drużynowy'],
+        ['Koszykówka','PZKosz','drużynowy'],
+        ['Siatkówka','PZPS','drużynowy'],
+        ['Piłka ręczna','ZPRP','drużynowy'],
+        ['Hokej na lodzie','PZHL','drużynowy'],
+        ['Unihokej','PZFloor','drużynowy'],
+        // Sporty indywidualne — sztuki walki
+        ['Judo','PZJudo','indywidualny'],
+        ['Karate','PZKarate','indywidualny'],
+        ['Taekwondo','PZTK','indywidualny'],
+        ['Aikido','PZAikido','indywidualny'],
+        ['Boks','PZBoks','indywidualny'],
+        ['Zapasy','PZZap','indywidualny'],
+        ['BJJ','PZBJJ','indywidualny'],
+        ['Sambo','PFSambo','indywidualny'],
+        ['Szermierka','PZSzerm','indywidualny'],
+        // Sporty indywidualne — atletyczne
+        ['Lekka atletyka','PZLA','indywidualny'],
+        ['Pływanie','PZP','indywidualny'],
+        ['Gimnastyka','PZGimn','indywidualny'],
+        ['Wioślarstwo','PZWiosl','indywidualny'],
+        ['Kolarstwo','PZKol','indywidualny'],
+        ['Triatlon','PTri','indywidualny'],
+        ['Wspinaczka','PZAlp','indywidualny'],
+        ['Podnoszenie ciężarów','PLPC','indywidualny'],
+        ['Trójbój siłowy','PLPA','indywidualny'],
+        // Sporty z rakietą
+        ['Tenis','PZT','indywidualny'],
+        ['Badminton','PZBad','indywidualny'],
+        ['Tenis stołowy','PZTS','indywidualny'],
+        ['Squash','PZSquash','indywidualny'],
+        ['Padel','PadPL','indywidualny'],
+        // Pozostałe
+        ['Strzelectwo','PZSS','indywidualny'],
+        ['Łucznictwo','PZŁucz','indywidualny'],
+        ['Wrotkarstwo','PZWrot','indywidualny'],
+        ['Żeglarstwo','PZŻegl','indywidualny'],
+        ['Jeździectwo','PZJezd','indywidualny'],
+        ['Szachy','PZSzach','indywidualny'],
+        ['Taniec sportowy','PZTaniec','indywidualny'],
+        ['CrossFit','CrossFit','indywidualny'],
       ];
       foreach ($sports as $s): ?>
         <div class="cd-sport">
@@ -25,7 +61,7 @@
     </div>
     <p class="cd-text-center" style="margin-top:2rem;color:var(--cd-charcoal-light)">Nie widzisz swojego sportu? <a href="#kontakt"><strong>Skontaktuj się z nami</strong></a> — dodanie nowego to kwestia konfiguracji.</p>
     <div class="cd-callout">
-      <p><strong>Integracja z polskimi związkami sportowymi</strong> — współpracujemy z federacjami (PZPN, PZKosz, PZPS, PZSS, PZLA i inne) tam, gdzie to możliwe. Integrujemy się również z <strong>biurami księgowymi</strong>.</p>
+      <p><strong>Integracja z polskimi związkami sportowymi</strong> — współpracujemy z federacjami (PZPN, PZKosz, PZPS, PZSS, PZLA, ZPRP i wiele innych) tam, gdzie to możliwe. Integrujemy się również z <strong>biurami księgowymi</strong>.</p>
     </div>
   </div>
 </section>
