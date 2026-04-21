@@ -40,6 +40,7 @@
   gap: .9rem;
 }
 .cd-sport-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.cd-sport-card--shootero { border-color: rgba(238,44,40,.25); }
 .cd-sport-card__head { display: flex; align-items: center; gap: .85rem; }
 .cd-sport-card__icon {
   width: 48px; height: 48px; flex-shrink: 0;
@@ -78,6 +79,44 @@
   color: #888;
   font-style: italic;
 }
+
+/* Shootero badge */
+.cd-shootero-badge {
+  display: block;
+  margin-top: auto;
+  text-decoration: none;
+  border-top: 1px solid rgba(238,44,40,.2);
+  padding-top: .85rem;
+  transition: opacity var(--transition-fast);
+}
+.cd-shootero-badge:hover { opacity: .8; }
+.cd-shootero-badge__inner {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  background: var(--cd-red-light);
+  border: 1px solid rgba(238,44,40,.2);
+  border-radius: var(--radius-md);
+  padding: .65rem .9rem;
+}
+.cd-shootero-badge__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .05rem;
+}
+.cd-shootero-badge__label {
+  font-size: .68rem;
+  color: #888;
+  font-weight: var(--fw-regular);
+}
+.cd-shootero-badge__name {
+  font-size: .95rem;
+  font-weight: var(--fw-bold);
+  color: var(--cd-red);
+  letter-spacing: .02em;
+}
+.cd-shootero-badge__arrow { flex-shrink: 0; }
 
 /* =====================
    FEATURE CARDS (Funkcje page)
