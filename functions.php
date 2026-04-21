@@ -14,12 +14,24 @@ add_action('after_setup_theme','clubdesk_setup');
 // ── Styles & Scripts ──
 function clubdesk_scripts() {
     wp_enqueue_style('clubdesk-fonts','https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&subset=latin-ext&display=swap',[],null);
-    wp_enqueue_style('clubdesk-brand',get_template_directory_uri().'/assets/css/brand.css',['clubdesk-fonts'],'1.0.0');
-    wp_enqueue_style('clubdesk-landing',get_template_directory_uri().'/assets/css/landing.css',['clubdesk-brand'],'1.0.0');
-    wp_enqueue_style('clubdesk-style',get_stylesheet_uri(),['clubdesk-landing'],'1.0.0');
-    wp_enqueue_script('clubdesk-main',get_template_directory_uri().'/assets/js/main.js',[],'1.0.0',true);
+    wp_enqueue_style('clubdesk-brand',get_template_directory_uri().'/assets/css/brand.css',['clubdesk-fonts'],'1.1.0');
+    wp_enqueue_style('clubdesk-landing',get_template_directory_uri().'/assets/css/landing.css',['clubdesk-brand'],'1.1.0');
+    wp_enqueue_style('clubdesk-subpages',get_template_directory_uri().'/assets/css/subpages.css',['clubdesk-landing'],'1.1.0');
+    wp_enqueue_style('clubdesk-style',get_stylesheet_uri(),['clubdesk-subpages'],'1.1.0');
+    wp_enqueue_script('clubdesk-main',get_template_directory_uri().'/assets/js/main.js',[],'1.1.0',true);
 }
 add_action('wp_enqueue_scripts','clubdesk_scripts');
+
+// ── Fallback nav (when WP menu not configured) ──
+function cd_fallback_nav() {
+    echo '<ul id="menu-primary" class="cd-nav__links">';
+    echo '<li><a href="' . esc_url(home_url('/')) . '">Strona główna</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/sporty')) . '">Sporty</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/funkcje')) . '">Funkcje</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/wyglad')) . '">Wygląd</a></li>';
+    echo '<li><a href="#kontakt" class="cd-btn cd-btn--primary">Kontakt</a></li>';
+    echo '</ul>';
+}
 
 // ── Widgets ──
 function clubdesk_widgets() {

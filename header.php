@@ -18,7 +18,7 @@
         <span>clubdesk.pl</span>
       <?php endif; ?>
     </a>
-    <?php wp_nav_menu(['theme_location'=>'primary','fallback_cb'=>false]); ?>
+    <?php wp_nav_menu(['theme_location'=>'primary','fallback_cb'=>'cd_fallback_nav']); ?>
     <button class="cd-nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
