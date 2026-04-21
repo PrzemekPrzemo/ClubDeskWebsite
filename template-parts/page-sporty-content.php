@@ -25,6 +25,7 @@ $sporty = [
     'nazwa'      => 'Strzelectwo',
     'federacja'  => 'PZSS',
     'typ'        => 'ind',
+    'shootero'   => true,
     'icon'       => '<svg viewBox="0 0 32 32" fill="none" stroke="#EE2C28" stroke-width="1.5"><circle cx="16" cy="16" r="10"/><circle cx="16" cy="16" r="4"/><path d="M16 2v4M16 26v4M2 16h4M26 16h4"/></svg>',
     'dedykowane' => ['Ewidencja broni i amunicji','Licencje PZSS z weryfikacją QR','Karty wynikowe i score sheets','System sędziowski z certyfikatami','Dyscypliny strzeleckie (pistolet, karabin, strzelba)','Rankingi strzelców i tabele zawodów'],
   ],
@@ -109,7 +110,7 @@ $wspolne = 'Każdy sport: zarządzanie członkami, treningi i frekwencja, badani
     </div>
     <div class="cd-grid cd-grid--3">
       <?php foreach($sporty as $s): ?>
-      <div class="cd-sport-card">
+      <div class="cd-sport-card<?php if(!empty($s['shootero'])) echo ' cd-sport-card--shootero'; ?>">
         <div class="cd-sport-card__head">
           <div class="cd-sport-card__icon"><?php echo $s['icon']; ?></div>
           <div class="cd-sport-card__meta">
@@ -129,7 +130,20 @@ $wspolne = 'Każdy sport: zarządzanie członkami, treningi i frekwencja, badani
             <li><?php echo esc_html($f); ?></li>
           <?php endforeach; ?>
         </ul>
+        <?php if(!empty($s['shootero'])): ?>
+        <a href="https://shootero.pl" target="_blank" rel="noopener" class="cd-shootero-badge">
+          <div class="cd-shootero-badge__inner">
+            <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="#EE2C28" stroke-width="2"/><circle cx="16" cy="16" r="4" fill="#EE2C28"/><line x1="16" y1="2" x2="16" y2="6" stroke="#EE2C28" stroke-width="2"/><line x1="16" y1="26" x2="16" y2="30" stroke="#EE2C28" stroke-width="2"/><line x1="2" y1="16" x2="6" y2="16" stroke="#EE2C28" stroke-width="2"/><line x1="26" y1="16" x2="30" y2="16" stroke="#EE2C28" stroke-width="2"/></svg>
+            <div class="cd-shootero-badge__text">
+              <span class="cd-shootero-badge__label">Obsługiwany przez</span>
+              <span class="cd-shootero-badge__name">Shootero</span>
+            </div>
+            <svg class="cd-shootero-badge__arrow" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#EE2C28" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </div>
+        </a>
+        <?php else: ?>
         <div class="cd-sport-card__common"><?php echo esc_html($wspolne); ?></div>
+        <?php endif; ?>
       </div>
       <?php endforeach; ?>
     </div>
