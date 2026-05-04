@@ -92,7 +92,7 @@ $wspolne = 'Każdy sport: zarządzanie członkami, treningi i frekwencja, badani
 <section class="cd-page-hero">
   <div class="cd-container">
     <h1>Sporty obsługiwane przez <span>ClubDesk</span></h1>
-    <p>37 dyscyplin sportowych z dedykowanymi funkcjami dopasowanymi do specyfiki każdego sportu. Jeden system — wszystkie potrzeby Twojego klubu.</p>
+    <p>50 dyscyplin sportowych z dedykowanymi funkcjami dopasowanymi do specyfiki każdego sportu. Jeden system — wszystkie potrzeby Twojego klubu.</p>
     <div class="cd-page-hero__badges">
       <?php foreach($sporty as $s): ?>
         <span><?php echo esc_html($s['federacja']); ?></span>
