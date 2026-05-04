@@ -13,18 +13,26 @@ $ik = [
   'dance'     => '<svg viewBox="0 0 32 32" fill="none" stroke="#EE2C28" stroke-width="1.5"><circle cx="11" cy="7" r="2.5"/><circle cx="21" cy="7" r="2.5"/><path d="M11 10c2 4 4 8 10 8m-10 0c2-4 6-6 10-8M9 28l2-10m12 10l-2-10"/></svg>',
   'climbing'  => '<svg viewBox="0 0 32 32" fill="none" stroke="#EE2C28" stroke-width="1.5"><path d="M6 4v24"/><path d="M6 8l6 4M6 16l8 3M6 22l5 3"/><circle cx="22" cy="8" r="3"/><path d="M22 11l-4 6-4 1 2 8"/></svg>',
   'crossfit'  => '<svg viewBox="0 0 32 32" fill="none" stroke="#EE2C28" stroke-width="1.5"><circle cx="16" cy="6" r="3"/><path d="M16 9v6l-4 2m4-2l4 2M12 18l-2 8m8-8l2 8"/><rect x="2" y="14" width="3" height="3" rx="1"/><rect x="27" y="14" width="3" height="3" rx="1"/><line x1="5" y1="15.5" x2="27" y2="15.5" stroke-width="2"/></svg>',
+  'snow'      => '<svg viewBox="0 0 32 32" fill="none" stroke="#EE2C28" stroke-width="1.5"><path d="M16 4v24M4 16h24M7 7l18 18M25 7L7 25"/><circle cx="16" cy="16" r="2.5"/></svg>',
+  'ice'       => '<svg viewBox="0 0 32 32" fill="none" stroke="#EE2C28" stroke-width="1.5"><path d="M5 22c2-3 6-5 11-5l8-3v5l-10 4H5z"/><line x1="5" y1="26" x2="26" y2="26"/><path d="M9 22v-2M14 22v-3"/></svg>',
+  'golf'      => '<svg viewBox="0 0 32 32" fill="none" stroke="#EE2C28" stroke-width="1.5"><path d="M11 4v22"/><path d="M11 4l11 3-11 4"/><circle cx="15" cy="28" r="2.5"/></svg>',
 ];
 
 $extra = [
   ['Unihokej','PZFloor','team','team',['Składy drużyn i wyniki meczów','Tabele ligowe i klasyfikacje','Protokoły zawodów','Statystyki zawodników (bramki, asysty)']],
+  ['Hokej na trawie','PZHT','team','team',['Składy drużyn i wyniki meczów','Tabele ligowe','Statystyki zawodników (gole, asysty)','Protokoły meczowe']],
+  ['Rugby','PZR','team','team',['Składy drużyn i transfery','Wyniki meczów (try, konwersje, drop-gole)','Tabele ligowe','Ewidencja kar i wykluczenia']],
   ['Taekwondo','PZTK','ind','martial',['System stopni kup/dan','Wyniki walk poomsae i kyorugi','Kategorie wagowe i wiekowe','Licencje PZTK']],
   ['Aikido','PZAikido','ind','martial',['System stopni kyu/dan','Historia egzaminów i awansów','Certyfikaty Aikikai','Zarządzanie instruktorami']],
   ['Boks','PZBoks','ind','martial',['Kategorie wagowe','Wyniki walk (punkty, KO, TKO)','Historia walk zawodnika','Licencje federacyjne']],
+  ['Kickboxing','PZKickB','ind','martial',['Formuły walk (light contact, K1, full contact)','Kategorie wagowe','Wyniki walk i rankingi','Licencje PZKickB']],
+  ['MMA','PFMMA','ind','martial',['Kategorie wagowe','Wyniki walk (KO/TKO/poddanie/decyzja)','Historia walk zawodnika','Licencje federacyjne']],
   ['Zapasy','PZZap','ind','martial',['Style rywalizacji (wolna, kl.-rz.)','Kategorie wagowe','Wyniki zawodów','Rankingi krajowe']],
   ['BJJ','PZBJJ','ind','martial',['System pasów (biały→czarny)','Wyniki zawodów gi/no-gi','Kategorie wagowe','Historia treningów']],
   ['Sambo','PFSambo','ind','martial',['Kategorie wagowe','Wyniki zawodów','Licencje PSF','Rankingi krajowe']],
   ['Szermierka','PZSzerm','ind','fencing',['Dyscypliny (floret, szabla, szpada)','Drabinki turniejowe','Wyniki meczów i walk','Rankingi indywidualne']],
   ['Wioślarstwo','PZWiosl','ind','endurance',['Wyniki regatowe per klasa łodzi','Rekordy torowe','Kategorie wiekowe','Historia regat']],
+  ['Kajakarstwo','PZKaj','ind','endurance',['Wyniki regat per klasa kajaka','Rekordy torowe','Kategorie wiekowe','Historia startów']],
   ['Kolarstwo','PZKol','ind','endurance',['Wyniki wyścigów (szosa, tor, MTB)','Rankingi sezonowe','Zarządzanie drużynami','Historia etapów']],
   ['Triatlon','PTri','ind','endurance',['Wyniki per segment (swim/bike/run)','Sumaryczne czasy finiszu','Rankingi sezonu','Kategorie wiekowe']],
   ['Gimnastyka','PZGimn','ind','endurance',['Oceny sędziowskie per ćwiczenie','Kategorie wiekowe','Wyniki zawodów','Historia progresji']],
@@ -34,13 +42,21 @@ $extra = [
   ['Tenis stołowy','PZTS','ind','racket',['Rankingi indywidualne i drużynowe','Wyniki meczów i setów','Drabinki turniejowe','Tabele ligowe']],
   ['Squash','PZSquash','ind','racket',['Rankingi indywidualne','Drabinki turniejowe','Historia head-to-head','Kategorie i poziomy']],
   ['Padel','PadPL','ind','racket',['Rankingi par deblowych','Drabinki turniejowe','Wyniki meczów i setów','Historia turniejów']],
+  ['Golf','PZGolf','ind','golf',['Karty wynikowe (stroke play, match play)','Indywidualny handicap (HCP)','Wyniki rund i turniejów','Rankingi klubowe']],
   ['Łucznictwo','PZŁucz','ind','archery',['Dyscypliny (klasyczny, bloczkowy)','Wyniki zawodów per odległość','Rankingi krajowe','Licencje PZŁucz']],
-  ['żeglarstwo','PZżegl','ind','sailing',['Wyniki regat per klasa jachtu','Licencje żeglarskie','Rankingi sezonowe','Historia regat']],
+  ['Żeglarstwo','PZŻegl','ind','sailing',['Wyniki regat per klasa jachtu','Licencje żeglarskie','Rankingi sezonowe','Historia regat']],
   ['Jeździectwo','PZJezd','ind','equestrian',['Wyniki (ujeżdżenie, skoki, trójbój)','Dokumentacja koni','Licencje PZJezd','Rankingi per dyscyplina']],
   ['Szachy','PZSzach','ind','chess',['Rankingi ELO','Wyniki turniejów runda po rundzie','Kategorie i klasy szachowe','Licencje PZSzach']],
+  ['Brydż sportowy','PZBryd','ind','chess',['Wyniki turniejów IMP/MP','Klasyfikacje par i drużyn','Klasy mistrzowskie','Historia rozdań']],
   ['Taniec sportowy','PZTaniec','ind','dance',['Wyniki (standardowe, latyno)','Klasy taneczne (S-A-B-C)','Rankingi par','Kategorie wiekowe']],
   ['Wspinaczka','PZAlp','ind','climbing',['Wyniki (prowadzenie, buldering, szybkość)','Rankingi per dyscyplina','Kategorie wiekowe','Certyfikaty instruktorskie']],
   ['CrossFit','CrossFit','ind','crossfit',['Wyniki WOD i benchmarks','Rekordy osobiste (lifts, czasy)','Rankingi Open','Historia treningów i progresji']],
+  ['Narciarstwo alpejskie','PZN','ind','snow',['Wyniki konkurencji (slalom, gigant, zjazd)','Czasy przejazdów i rankingi','Kategorie wiekowe','Licencje FIS/PZN']],
+  ['Skoki narciarskie','PZN','ind','snow',['Wyniki skoków (długość + nota sędziowska)','Klasyfikacje serii i rund','Kategorie wiekowe','Licencje PZN']],
+  ['Snowboard','PZSnow','ind','snow',['Konkurencje (slopestyle, half-pipe, slalom)','Oceny sędziowskie','Rankingi sezonowe','Historia startów']],
+  ['Narciarstwo biegowe','PZNB','ind','snow',['Wyniki per styl (klasyk, łyżwa)','Czasy etapowe i sumaryczne','Kategorie wiekowe','Rankingi krajowe']],
+  ['Biathlon','PZBiath','ind','snow',['Wyniki konkurencji (sprint, bieg masowy)','Statystyki strzelania (trafienia, karne)','Czasy etapów','Rankingi sezonowe']],
+  ['Łyżwiarstwo figurowe','PZŁF','ind','ice',['Oceny sędziowskie (TES + PCS)','Krótki i dowolny program','Kategorie wiekowe i klasy','Historia zawodów']],
 ];
 $wspolne = 'Każdy sport: zarządzanie członkami, treningi i frekwencja, badania lekarskie, licencje, zawody, rankingi.';
 ?>
@@ -49,8 +65,8 @@ $wspolne = 'Każdy sport: zarządzanie członkami, treningi i frekwencja, badani
   <div class="cd-container">
     <div class="cd-section__header">
       <span class="cd-label">Dyscypliny — część 2/2</span>
-      <h2>Kolejne 25 dyscyplin</h2>
-      <p>Sztuki walki, sporty siłowe, rakietowe, wytrzymałościowe i wiele innych.</p>
+      <h2>Kolejne 38 dyscyplin</h2>
+      <p>Sztuki walki, sporty siłowe, rakietowe, wytrzymałościowe, zimowe i wiele innych.</p>
     </div>
     <div class="cd-grid cd-grid--3">
       <?php foreach($extra as $s): ?>

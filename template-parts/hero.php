@@ -3,7 +3,7 @@
     <div class="cd-hero__inner">
       <div class="cd-hero__content">
         <h1>Zarządzaj <span class="cd-text-red">klubem sportowym</span> jak profesjonalista</h1>
-        <p class="cd-hero__sub">Wielosportowy system ERP/CRM stworzony dla polskich klubów sportowych. Członkowie, finanse, treningi, zawody, komunikacja i cyfrowa legitymacja zawodnika — wszystko w jednym miejscu, 100% online. Obsługuje <strong>37 dyscyplin sportowych</strong>.</p>
+        <p class="cd-hero__sub">Wielosportowy system ERP/CRM stworzony dla polskich klubów sportowych. Członkowie, finanse, treningi, zawody, komunikacja i cyfrowa legitymacja zawodnika — wszystko w jednym miejscu, 100% online. Obsługuje <strong>50 dyscyplin sportowych</strong>.</p>
         <div class="cd-hero__buttons">
           <a href="#kontakt" class="cd-btn cd-btn--primary cd-btn--lg">Umów bezpłatną konsultację</a>
           <a href="/sporty" class="cd-btn cd-btn--white cd-btn--lg">Zobacz sporty</a>
@@ -11,7 +11,7 @@
         <div class="cd-hero__trust">
           <p>Integracja z polskimi związkami sportowymi</p>
           <div class="cd-hero__badges">
-            <span>PZPN</span><span>PZKosz</span><span>PZPS</span><span>PZSS</span><span>PZLA</span><span>PZHL</span><span>PZT</span><span>PZJudo</span><span>ZPRP</span><span>PZWrot</span><span>PZKarate</span><span>PZTK</span><span>PZBoks</span><span>PZBad</span><span>PZTS</span><span>PZAlp</span><span>PZSzerm</span><span>PTri</span><span>PZFloor</span><span class="cd-hero__badge--more">+18</span>
+            <span>PZPN</span><span>PZKosz</span><span>PZPS</span><span>PZSS</span><span>PZLA</span><span>PZHL</span><span>PZT</span><span>PZJudo</span><span>ZPRP</span><span>PZWrot</span><span>PZKarate</span><span>PZTK</span><span>PZBoks</span><span>PZBad</span><span>PZTS</span><span>PZAlp</span><span>PZSzerm</span><span>PTri</span><span>PZFloor</span><span class="cd-hero__badge--more">+31</span>
           </div>
         </div>
       </div>
