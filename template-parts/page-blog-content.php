@@ -128,7 +128,7 @@
 <section class="cd-cta-band">
   <div class="cd-container">
     <h2>Prowadzisz klub sportowy?</h2>
-    <p>ClubDesk — jedyny polski system z architekturą multi-sport. 37 dyscyplin, 14 modułów, 100% online.</p>
+    <p>ClubDesk — jedyny polski system z architekturą multi-sport. 59 dyscyplin, 14 modułów, 100% online.</p>
     <a href="<?php echo esc_url(home_url('/#kontakt')); ?>" class="cd-btn cd-btn--white cd-btn--lg">Umów konsultację</a>
   </div>
 </section>

@@ -2,5 +2,6 @@
 get_header();
 get_template_part('template-parts/page-sporty-content');
 get_template_part('template-parts/page-sporty-extra');
+get_template_part('template-parts/page-sporty-more');
 get_footer();
 ?>

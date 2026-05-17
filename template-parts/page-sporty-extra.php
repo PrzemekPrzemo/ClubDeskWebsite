@@ -64,7 +64,7 @@ $wspolne = 'Każdy sport: zarządzanie członkami, treningi i frekwencja, badani
 <section class="cd-section cd-section--light" id="lista-sportow-2">
   <div class="cd-container">
     <div class="cd-section__header">
-      <span class="cd-label">Dyscypliny — część 2/2</span>
+      <span class="cd-label">Dyscypliny — część 2/3</span>
       <h2>Kolejne 38 dyscyplin</h2>
       <p>Sztuki walki, sporty siłowe, rakietowe, wytrzymałościowe, zimowe i wiele innych.</p>
     </div>
@@ -94,28 +94,5 @@ $wspolne = 'Każdy sport: zarządzanie członkami, treningi i frekwencja, badani
       </div>
       <?php endforeach; ?>
     </div>
-  </div>
-</section>
-
-<section class="cd-section cd-section--slate">
-  <div class="cd-container">
-    <div class="cd-section__header">
-      <span class="cd-label">Rozszerzalność</span>
-      <h2>Nie widzisz swojego sportu?</h2>
-      <p>Architektura ClubDesk jest w pełni rozszerzalna. Dodanie nowej dyscypliny to kwestia konfiguracji.</p>
-    </div>
-    <div class="cd-grid cd-grid--3">
-      <div class="cd-diff"><div class="cd-diff__icon"><svg viewBox="0 0 22 22" fill="none" stroke="#EE2C28" stroke-width="1.5"><path d="M11 2v4M11 16v4M2 11h4M16 11h4"/><circle cx="11" cy="11" r="4"/></svg></div><div><h4>Szybka konfiguracja</h4><p>Nowy sport = wpis w bazie danych + plik manifest. Brak zmian w kodzie platformy.</p></div></div>
-      <div class="cd-diff"><div class="cd-diff__icon"><svg viewBox="0 0 22 22" fill="none" stroke="#EE2C28" stroke-width="1.5"><rect x="2" y="2" width="18" height="18" rx="3"/><path d="M7 11h8M11 7v8"/></svg></div><div><h4>Własne pola danych</h4><p>Każda dyscyplina może mieć własne pola dodatkowe dopasowane do specyfiki sportu.</p></div></div>
-      <div class="cd-diff"><div class="cd-diff__icon"><svg viewBox="0 0 22 22" fill="none" stroke="#EE2C28" stroke-width="1.5"><path d="M11 2L2 7v8l9 5 9-5V7l-9-5z"/></svg></div><div><h4>Współpraca z federacjami</h4><p>Jesteśmy otwarci na wdrożenia dla nowych związków sportowych i dyscyplin niszowych.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="cd-cta-band">
-  <div class="cd-container">
-    <h2>Twój sport jest na liście?</h2>
-    <p>Umów bezpłatną konsultację i zacznij korzystać z ClubDesk już dziś.</p>
-    <a href="<?php echo esc_url(home_url('/#kontakt')); ?>" class="cd-btn cd-btn--white cd-btn--lg">Umów konsultację</a>
   </div>
 </section>

@@ -24,8 +24,8 @@ add_action('wp_enqueue_scripts','clubdesk_scripts');
 
 // ── SEO: Custom page titles ──
 function cd_document_title($title) {
-    if (is_front_page()) return 'ClubDesk — System zarządzania klubem sportowym | 37 dyscyplin';
-    if (is_page('sporty'))         return '37 dyscyplin sportowych — obsługiwane sporty | ClubDesk';
+    if (is_front_page()) return 'ClubDesk — System zarządzania klubem sportowym | 59 dyscyplin';
+    if (is_page('sporty'))         return '59 dyscyplin sportowych — obsługiwane sporty | ClubDesk';
     if (is_page('funkcje'))        return 'Funkcje systemu — 14 modułów do zarządzania klubem | ClubDesk';
     if (is_page('wyglad'))         return 'Wygląd systemu ClubDesk — przegląd ekranów | ClubDesk';
     if (is_page('bezpieczenstwo')) return 'Bezpieczeństwo danych w klubie sportowym | ClubDesk';
@@ -38,8 +38,8 @@ add_filter('pre_get_document_title','cd_document_title');
 // ── SEO: Meta description, OpenGraph per strona ──
 function cd_seo_head() {
     $metas = [
-        ''               => 'System zarządzania klubem sportowym dla 37 dyscyplin. Członkowie, finanse, treningi, zawody i cyfrowa legitymacja z QR — 100% online. Sprawdź ClubDesk.',
-        'sporty'         => 'ClubDesk obsługuje 37 dyscyplin sportowych: piłka nożna, pływanie, sztuki walki, kolarstwo i wiele innych. Dedykowane moduły per sport, integracje z federacjami.',
+        ''               => 'System zarządzania klubem sportowym dla 59 dyscyplin. Członkowie, finanse, treningi, zawody i cyfrowa legitymacja z QR — 100% online. Sprawdź ClubDesk.',
+        'sporty'         => 'ClubDesk obsługuje 59 dyscyplin sportowych: piłka nożna, futsal, pływanie, sztuki walki (MMA, kickboxing), narciarstwo, golf, e-sport, joga i wiele innych. Dedykowane moduły per sport, integracje z federacjami.',
         'funkcje'        => '14 modułów ClubDesk: zarządzanie członkami, finanse, treningi, zawody, portal zawodnika z QR, galeria, sklep klubowy, API REST i więcej.',
         'wyglad'         => 'Poznaj interfejs ClubDesk — 12 ekranów systemu ERP dla klubów sportowych. Dashboard, panel zawodnika, finanse, kalendarz treningów i więcej.',
         'bezpieczenstwo' => 'Bezpieczeństwo danych w ClubDesk: 2FA, izolacja multi-tenant, szyfrowanie transmisji, automatyczne kopie zapasowe, pełna zgodność z RODO.',
@@ -80,7 +80,7 @@ function cd_json_ld() { ?>
   "applicationCategory":"BusinessApplication",
   "operatingSystem":"Web",
   "url":"https://clubdesk.pl",
-  "description":"Wielosportowy system ERP/CRM dla polskich klubów sportowych. 37 dyscyplin, 14 modułów, API REST, 2FA, RODO.",
+  "description":"Wielosportowy system ERP/CRM dla polskich klubów sportowych. 59 dyscyplin, 14 modułów, API REST, 2FA, RODO.",
   "offers":{"@type":"AggregateOffer","priceCurrency":"PLN","availability":"https://schema.org/InStock"},
   "featureList":"Zarządzanie członkami, finanse, treningi, zawody, cyfrowa legitymacja QR, API REST, 2FA, RODO"
 }]
