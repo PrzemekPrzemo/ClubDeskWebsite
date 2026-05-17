@@ -11,7 +11,7 @@
         <div class="cd-hero__trust">
           <p>Integracja z polskimi związkami sportowymi</p>
           <div class="cd-hero__badges">
-            <span>PZPN</span><span>PZKosz</span><span>PZPS</span><span>PZSS</span><span>PZLA</span><span>PZHL</span><span>PZT</span><span>PZJudo</span><span>ZPRP</span><span>PZWrot</span><span>PZKarate</span><span>PZTK</span><span>PZBoks</span><span>PZBad</span><span>PZTS</span><span>PZAlp</span><span>PZSzerm</span><span>PTri</span><span>PZFloor</span><span class="cd-hero__badge--more">+18</span>
+            <span>PZPN</span><span>PZKosz</span><span>PZPS</span><span>PZSS</span><span>PZLA</span><span>PZHL</span><span>PZT</span><span>PZJudo</span><span>ZPRP</span><span>PZWrot</span><span>PZKarate</span><span>PZTK</span><span>PZBoks</span><span>PZBad</span><span>PZTS</span><span>PZAlp</span><span>PZSzerm</span><span>PTri</span><span>PZFloor</span><span class="cd-hero__badge--more">+40</span>
           </div>
         </div>
       </div>
