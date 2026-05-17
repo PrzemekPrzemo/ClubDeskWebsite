@@ -48,7 +48,7 @@ $wspolne = 'Każdy sport: zarządzanie członkami, treningi i frekwencja, badani
 <section class="cd-section cd-section--light" id="lista-sportow-2">
   <div class="cd-container">
     <div class="cd-section__header">
-      <span class="cd-label">Dyscypliny — część 2/2</span>
+      <span class="cd-label">Dyscypliny — część 3/3</span>
       <h2>Kolejne 25 dyscyplin</h2>
       <p>Sztuki walki, sporty siłowe, rakietowe, wytrzymałościowe i wiele innych.</p>
     </div>

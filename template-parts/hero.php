@@ -3,7 +3,7 @@
     <div class="cd-hero__inner">
       <div class="cd-hero__content">
         <h1>Zarządzaj <span class="cd-text-red">klubem sportowym</span> jak profesjonalista</h1>
-        <p class="cd-hero__sub">Wielosportowy system ERP/CRM stworzony dla polskich klubów sportowych. Członkowie, finanse, treningi, zawody, komunikacja i cyfrowa legitymacja zawodnika — wszystko w jednym miejscu, 100% online. Obsługuje <strong>37 dyscyplin sportowych</strong>.</p>
+        <p class="cd-hero__sub">Wielosportowy system ERP/CRM stworzony dla polskich klubów sportowych. Członkowie, finanse, treningi, zawody, komunikacja i cyfrowa legitymacja zawodnika — wszystko w jednym miejscu, 100% online. Obsługuje <strong>59 dyscyplin sportowych</strong>.</p>
         <div class="cd-hero__buttons">
           <a href="#kontakt" class="cd-btn cd-btn--primary cd-btn--lg">Umów bezpłatną konsultację</a>
           <a href="/sporty" class="cd-btn cd-btn--white cd-btn--lg">Zobacz sporty</a>

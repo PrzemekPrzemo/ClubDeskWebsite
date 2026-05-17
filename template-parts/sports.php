@@ -3,24 +3,32 @@
     <div class="cd-section__header">
       <span class="cd-label">Sporty</span>
       <h2>System dla <span class="cd-text-red">każdego</span> sportu</h2>
-      <p>Architektura pluginowa — każda z <strong>37 dyscyplin</strong> ma dedykowane moduły dopasowane do specyfiki sportu.</p>
+      <p>Architektura pluginowa — każda z <strong>59 dyscyplin</strong> ma dedykowane moduły dopasowane do specyfiki sportu.</p>
     </div>
     <div class="cd-grid cd-grid--6">
       <?php
       $sports = [
         // Sporty drużynowe
         ['Piłka nożna','PZPN','drużynowy'],
+        ['Futsal','PZPN','drużynowy'],
         ['Koszykówka','PZKosz','drużynowy'],
         ['Siatkówka','PZPS','drużynowy'],
         ['Piłka ręczna','ZPRP','drużynowy'],
+        ['Piłka wodna','PZPW','drużynowy'],
         ['Hokej na lodzie','PZHL','drużynowy'],
+        ['Hokej na trawie','PZHT','drużynowy'],
         ['Unihokej','PZFloor','drużynowy'],
+        ['Rugby','PZR','drużynowy'],
+        ['Curling','PZCurl','drużynowy'],
+        ['E-sport','PZEsp','drużynowy'],
         // Sporty indywidualne — sztuki walki
         ['Judo','PZJudo','indywidualny'],
         ['Karate','PZKarate','indywidualny'],
         ['Taekwondo','PZTK','indywidualny'],
         ['Aikido','PZAikido','indywidualny'],
         ['Boks','PZBoks','indywidualny'],
+        ['Kickboxing','PZKB','indywidualny'],
+        ['MMA','PZMMA','indywidualny'],
         ['Zapasy','PZZap','indywidualny'],
         ['BJJ','PZBJJ','indywidualny'],
         ['Sambo','PFSambo','indywidualny'],
@@ -30,24 +38,40 @@
         ['Pływanie','PZP','indywidualny'],
         ['Gimnastyka','PZGimn','indywidualny'],
         ['Wioślarstwo','PZWiosl','indywidualny'],
+        ['Kajakarstwo','PZKaj','indywidualny'],
         ['Kolarstwo','PZKol','indywidualny'],
         ['Triatlon','PTri','indywidualny'],
         ['Wspinaczka','PZAlp','indywidualny'],
         ['Podnoszenie ciężarów','PLPC','indywidualny'],
         ['Trójbój siłowy','PLPA','indywidualny'],
+        ['Strongman','—','indywidualny'],
         // Sporty z rakietą
         ['Tenis','PZT','indywidualny'],
         ['Badminton','PZBad','indywidualny'],
         ['Tenis stołowy','PZTS','indywidualny'],
         ['Squash','PZSquash','indywidualny'],
         ['Padel','PadPL','indywidualny'],
+        // Sporty zimowe
+        ['Łyżwiarstwo figurowe','PZŁF','indywidualny'],
+        ['Narciarstwo alpejskie','PZN','indywidualny'],
+        ['Narciarstwo biegowe','PZN','indywidualny'],
+        ['Skoki narciarskie','PZN','indywidualny'],
+        ['Snowboard','PZN','indywidualny'],
+        ['Biathlon','PZBiath','indywidualny'],
+        // Studio
+        ['Joga','—','indywidualny'],
+        ['Pilates','—','indywidualny'],
+        ['Fitness','—','indywidualny'],
+        ['Taniec','PZTan','indywidualny'],
         // Pozostałe
         ['Strzelectwo','PZSS','indywidualny'],
         ['Łucznictwo','PZŁucz','indywidualny'],
         ['Wrotkarstwo','PZWrot','indywidualny'],
         ['Żeglarstwo','PZŻegl','indywidualny'],
         ['Jeździectwo','PZJezd','indywidualny'],
+        ['Golf','PZG','indywidualny'],
         ['Szachy','PZSzach','indywidualny'],
+        ['Brydż sportowy','PZBrydż','indywidualny'],
         ['Taniec sportowy','PZTaniec','indywidualny'],
         ['CrossFit','CrossFit','indywidualny'],
       ];
