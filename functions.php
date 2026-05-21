@@ -179,7 +179,7 @@ add_action('wp_head','cd_json_ld');
 
 // ── SEO: Analytics / GTM (set ID in Customizer to enable) ──
 function cd_analytics_head() {
-    $ga4 = get_theme_mod('clubdesk_ga4_id', 'G-37WN6M4DV4');
+    $ga4 = get_theme_mod('clubdesk_ga4_id', 'G-F431LH3D5W');
     $gtm = get_theme_mod('clubdesk_gtm_id', '');
     if ($ga4) {
         $id = esc_js($ga4);
@@ -249,7 +249,7 @@ function clubdesk_customizer($wp_customize) {
     $seo_fields = [
         'gsc_verify'        => ['Google Search Console — kod weryfikacyjny','sanitize_text_field'],
         'bing_verify'       => ['Bing Webmaster Tools — kod weryfikacyjny','sanitize_text_field'],
-        'ga4_id'            => ['Google Analytics 4 — Measurement ID (G-XXXXXXXX, domyślnie G-37WN6M4DV4)','sanitize_text_field'],
+        'ga4_id'            => ['Google Analytics 4 — Measurement ID (G-XXXXXXXX, domyślnie G-F431LH3D5W)','sanitize_text_field'],
         'gtm_id'            => ['Google Tag Manager — Container ID (GTM-XXXXXXX)','sanitize_text_field'],
         'social_facebook'   => ['Facebook URL','esc_url_raw'],
         'social_linkedin'   => ['LinkedIn URL','esc_url_raw'],
