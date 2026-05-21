@@ -122,6 +122,26 @@ W **Ustawienia → Bezpośrednie odnośniki** ustaw:
 - **Po 2 tygodniach:** sprawdź **„Skuteczność"** → pierwsze wyświetlenia (impressions)
 - **Po 4 tygodniach:** zacznij analizować zapytania (queries) i optymalizuj treści
 
+## IndexNow + Sitemap Ping (już wbudowane)
+
+Motyw automatycznie powiadamia Bing / Yandex / DuckDuckGo / Seznam (przez **IndexNow**) oraz pinguje sitemapę do Google i Bing:
+
+**Kiedy się odpala:**
+- Po opublikowaniu posta lub strony (`transition_post_status`) — tylko URL danej strony idzie do IndexNow, sitemap ping leci tylko przy pierwszej publikacji (nie przy edycji)
+- Raz po deployu — w panelu admina automatycznie wysyła **wszystkie 6 głównych stron** (home, sporty, funkcje, wyglad, bezpieczenstwo, blog)
+
+**Co zobaczysz po deployu:**
+1. Pierwszy raz po wgraniu kodu — wejdź w `wp-admin` → automatycznie odpali się initial push (po cichu, w tle)
+2. **Ustawienia → ClubDesk SEO** — strona z kluczem IndexNow i przyciskiem ręcznego re-push
+3. Klucz IndexNow jest serwowany pod `https://clubdesk.pl/{32-znakowy-klucz}.txt` (IndexNow protocol wymaga tego dla weryfikacji)
+
+**Jak sprawdzić że działa:**
+- Po publikacji nowego posta: w **Bing Webmaster Tools** → **URL Submission** → **Submission History** — powinieneś zobaczyć URL z statusem „Quota Reset" lub „Submitted"
+- Klucz pod jego URL-em musi zwracać 200 + treść = klucz (test: `curl https://clubdesk.pl/{klucz}.txt`)
+
+**Dlaczego nie używamy Google Indexing API:**
+Oficjalnie tylko dla `JobPosting` i `BroadcastEvent` (livestream). Strona ClubDesk nie ma żadnego z tych content type — API zignorowałoby requesty albo zablokowałoby konto. **GSC „Poproś o zaindeksowanie"** + sitemap ping + dobry content + linkowanie = wystarczy dla 6 stron + bloga (1 post/tydzień).
+
 ## Co jeszcze warto dorzucić (osobne zadania)
 
 | Co | Priorytet | Wysiłek |

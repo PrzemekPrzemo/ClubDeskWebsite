@@ -202,6 +202,131 @@ function cd_analytics_body_open() {
         echo "<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id={$id}\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>\n";
     }
 }
+
+// ── SEO: IndexNow (Bing / Yandex / DuckDuckGo / Seznam) + sitemap ping ──
+//
+// Auto-pushes URLs when posts/pages are published or significantly updated.
+// Also runs once on the next admin load after deploy to push all 6 main pages.
+
+function cd_indexnow_key() {
+    $key = get_option('cd_indexnow_key', '');
+    if (!$key || strlen($key) < 16) {
+        $key = str_replace('-', '', wp_generate_uuid4());
+        update_option('cd_indexnow_key', $key, true);
+    }
+    return $key;
+}
+
+function cd_indexnow_serve_key() {
+    $key = cd_indexnow_key();
+    $path = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+    if ($path === '/' . $key . '.txt') {
+        header('Content-Type: text/plain');
+        header('Cache-Control: public, max-age=3600');
+        echo $key;
+        exit;
+    }
+}
+add_action('wp_loaded', 'cd_indexnow_serve_key');
+
+function cd_indexnow_push($urls) {
+    if (empty($urls)) return;
+    $urls = array_values(array_filter(array_unique(is_array($urls) ? $urls : [$urls])));
+    if (empty($urls)) return;
+
+    $host = wp_parse_url(home_url(), PHP_URL_HOST);
+    $key  = cd_indexnow_key();
+    $body = wp_json_encode([
+        'host'        => $host,
+        'key'         => $key,
+        'keyLocation' => home_url('/' . $key . '.txt'),
+        'urlList'     => $urls,
+    ], JSON_UNESCAPED_SLASHES);
+
+    wp_remote_post('https://api.indexnow.org/IndexNow', [
+        'headers'  => ['Content-Type' => 'application/json; charset=utf-8'],
+        'body'     => $body,
+        'timeout'  => 5,
+        'blocking' => false,
+    ]);
+}
+
+function cd_sitemap_ping() {
+    $sitemap = urlencode(home_url('/sitemap.xml'));
+    foreach ([
+        'https://www.google.com/ping?sitemap=' . $sitemap,
+        'https://www.bing.com/ping?sitemap=' . $sitemap,
+    ] as $url) {
+        wp_remote_get($url, ['timeout' => 5, 'blocking' => false]);
+    }
+}
+
+function cd_on_publish($new_status, $old_status, $post) {
+    if ($new_status !== 'publish') return;
+    if (!in_array($post->post_type, ['post','page'], true)) return;
+    if (wp_is_post_revision($post) || wp_is_post_autosave($post)) return;
+
+    $url = get_permalink($post);
+    if ($url) cd_indexnow_push([$url]);
+
+    // Ping sitemap only for new publishes (not every edit) to avoid spam
+    if ($old_status !== 'publish') cd_sitemap_ping();
+}
+add_action('transition_post_status', 'cd_on_publish', 10, 3);
+
+// One-time push of all key pages on the next admin load after deploy.
+// Bumped when the SEO setup changes so it re-fires once.
+function cd_seo_initial_push() {
+    if (!is_admin() || !current_user_can('manage_options')) return;
+    $version = '2026-05-21-seo-v1';
+    if (get_option('cd_seo_initial_push_version') === $version) return;
+
+    $pages = [
+        home_url('/'),
+        home_url('/sporty/'),
+        home_url('/funkcje/'),
+        home_url('/wyglad/'),
+        home_url('/bezpieczenstwo/'),
+        home_url('/blog/'),
+    ];
+    cd_indexnow_push($pages);
+    cd_sitemap_ping();
+    update_option('cd_seo_initial_push_version', $version, true);
+}
+add_action('admin_init', 'cd_seo_initial_push');
+
+// Admin tool: manual re-push trigger.
+// Usage: /wp-admin/admin-post.php?action=cd_seo_repush&_wpnonce=...
+function cd_seo_repush_handler() {
+    if (!current_user_can('manage_options')) wp_die('Forbidden', 403);
+    check_admin_referer('cd_seo_repush');
+    delete_option('cd_seo_initial_push_version');
+    cd_seo_initial_push();
+    wp_safe_redirect(admin_url('options-general.php?page=cd-seo-tools&pushed=1'));
+    exit;
+}
+add_action('admin_post_cd_seo_repush', 'cd_seo_repush_handler');
+
+function cd_seo_tools_page() {
+    add_options_page('ClubDesk SEO Tools', 'ClubDesk SEO', 'manage_options', 'cd-seo-tools', function() {
+        $key = cd_indexnow_key();
+        $key_url = home_url('/' . $key . '.txt');
+        $last = get_option('cd_seo_initial_push_version');
+        $pushed = isset($_GET['pushed']);
+        echo '<div class="wrap"><h1>ClubDesk — narzędzia SEO</h1>';
+        if ($pushed) echo '<div class="notice notice-success"><p>Wysłano push do IndexNow + ping sitemapy.</p></div>';
+        echo '<h2>IndexNow</h2>';
+        echo '<p>Klucz: <code>' . esc_html($key) . '</code></p>';
+        echo '<p>URL klucza: <a href="' . esc_url($key_url) . '" target="_blank">' . esc_html($key_url) . '</a></p>';
+        echo '<p>Status: ' . ($last ? 'Ostatni initial push: <code>' . esc_html($last) . '</code>' : 'Jeszcze nie pushowano') . '</p>';
+        echo '<h2>Ręczny re-push 6 głównych stron</h2>';
+        echo '<p>Kliknij, żeby wysłać home + 5 podstron do IndexNow (Bing/Yandex/DuckDuckGo) i pingnąć Google + Bing sitemapę.</p>';
+        $url = wp_nonce_url(admin_url('admin-post.php?action=cd_seo_repush'), 'cd_seo_repush');
+        echo '<a href="' . esc_url($url) . '" class="button button-primary">Wyślij teraz</a>';
+        echo '</div>';
+    });
+}
+add_action('admin_menu', 'cd_seo_tools_page');
 add_action('wp_body_open','cd_analytics_body_open');
 
 // ── Fallback nav (when WP menu not configured) ──
