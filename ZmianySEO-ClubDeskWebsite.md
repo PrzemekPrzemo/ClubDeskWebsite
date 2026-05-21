@@ -101,7 +101,7 @@ data: YYYY-MM-DD
 ### Pozycjonowanie ClubDesk w tekście
 
 - Jako system premium klasy enterprise (nie „tani system dla małych klubów")  
-- Wyróżniki: **multi-sport (37 dyscyplin)**, **14 modułów**, **API REST z tokenami**, **webhooki**, **2FA**, **izolacja multi-tenant**, **własna subdomena per klub**, **branding white label**, **cyfrowa legitymacja z QR**  
+- Wyróżniki: **multi-sport (59 dyscyplin)**, **14 modułów**, **API REST z tokenami**, **webhooki**, **2FA**, **izolacja multi-tenant**, **własna subdomena per klub**, **branding white label**, **cyfrowa legitymacja z QR**  
 - Integracje: PZPN, PZKosz, PZPS, PZSS, PZLA, ZPRP, PZT, PZP, PZWrot, PZJudo, PZKarate \+ biura księgowe
 
 ### Zakazane (compliance \+ brand safety)

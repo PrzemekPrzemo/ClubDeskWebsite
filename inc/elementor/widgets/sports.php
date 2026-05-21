@@ -20,20 +20,7 @@ class ClubDesk_Sports_Widget extends \Elementor\Widget_Base {
                 ['name'=>'fed','label'=>'Federacja','type'=>\Elementor\Controls_Manager::TEXT],
                 ['name'=>'type','label'=>'Typ','type'=>\Elementor\Controls_Manager::SELECT,'options'=>['drużynowy'=>'Drużynowy','indywidualny'=>'Indywidualny'],'default'=>'drużynowy'],
             ],
-            'default'=>[
-                ['name'=>'Piłka nożna','fed'=>'PZPN','type'=>'drużynowy'],
-                ['name'=>'Koszykówka','fed'=>'PZKosz','type'=>'drużynowy'],
-                ['name'=>'Siatkówka','fed'=>'PZPS','type'=>'drużynowy'],
-                ['name'=>'Strzelectwo','fed'=>'PZSS','type'=>'indywidualny'],
-                ['name'=>'Lekka atletyka','fed'=>'PZLA','type'=>'indywidualny'],
-                ['name'=>'Hokej na lodzie','fed'=>'PZHL','type'=>'drużynowy'],
-                ['name'=>'Piłka ręczna','fed'=>'ZPRP','type'=>'drużynowy'],
-                ['name'=>'Tenis','fed'=>'PZT','type'=>'indywidualny'],
-                ['name'=>'Pływanie','fed'=>'PZP','type'=>'indywidualny'],
-                ['name'=>'Judo','fed'=>'PZJ','type'=>'indywidualny'],
-                ['name'=>'Karate','fed'=>'PZKarate','type'=>'indywidualny'],
-                ['name'=>'Wrotkarstwo','fed'=>'PZWrot','type'=>'indywidualny'],
-            ],
+            'default'=> require get_template_directory() . '/inc/sports-data.php',
             'title_field'=>'{{{ name }}}',
         ]);
         $this->end_controls_section();
