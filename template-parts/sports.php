@@ -7,79 +7,12 @@
     </div>
     <div class="cd-grid cd-grid--6">
       <?php
-      $sports = [
-        // Sporty drużynowe
-        ['Piłka nożna','PZPN','drużynowy'],
-        ['Futsal','PZPN','drużynowy'],
-        ['Koszykówka','PZKosz','drużynowy'],
-        ['Siatkówka','PZPS','drużynowy'],
-        ['Piłka ręczna','ZPRP','drużynowy'],
-        ['Piłka wodna','PZPW','drużynowy'],
-        ['Hokej na lodzie','PZHL','drużynowy'],
-        ['Hokej na trawie','PZHT','drużynowy'],
-        ['Unihokej','PZFloor','drużynowy'],
-        ['Rugby','PZR','drużynowy'],
-        ['Curling','PZCurl','drużynowy'],
-        ['E-sport','PZEsp','drużynowy'],
-        // Sporty indywidualne — sztuki walki
-        ['Judo','PZJudo','indywidualny'],
-        ['Karate','PZKarate','indywidualny'],
-        ['Taekwondo','PZTK','indywidualny'],
-        ['Aikido','PZAikido','indywidualny'],
-        ['Boks','PZBoks','indywidualny'],
-        ['Kickboxing','PZKickB','indywidualny'],
-        ['MMA','PFMMA','indywidualny'],
-        ['Zapasy','PZZap','indywidualny'],
-        ['BJJ','PZBJJ','indywidualny'],
-        ['Sambo','PFSambo','indywidualny'],
-        ['Szermierka','PZSzerm','indywidualny'],
-        // Sporty indywidualne — atletyczne
-        ['Lekka atletyka','PZLA','indywidualny'],
-        ['Pływanie','PZP','indywidualny'],
-        ['Gimnastyka','PZGimn','indywidualny'],
-        ['Wioślarstwo','PZWiosl','indywidualny'],
-        ['Kajakarstwo','PZKaj','indywidualny'],
-        ['Kolarstwo','PZKol','indywidualny'],
-        ['Triatlon','PTri','indywidualny'],
-        ['Wspinaczka','PZAlp','indywidualny'],
-        ['Podnoszenie ciężarów','PLPC','indywidualny'],
-        ['Trójbój siłowy','PLPA','indywidualny'],
-        ['Strongman','—','indywidualny'],
-        // Sporty z rakietą
-        ['Tenis','PZT','indywidualny'],
-        ['Badminton','PZBad','indywidualny'],
-        ['Tenis stołowy','PZTS','indywidualny'],
-        ['Squash','PZSquash','indywidualny'],
-        ['Padel','PadPL','indywidualny'],
-        // Sporty zimowe
-        ['Narciarstwo alpejskie','PZN','indywidualny'],
-        ['Skoki narciarskie','PZN','indywidualny'],
-        ['Narciarstwo biegowe','PZNB','indywidualny'],
-        ['Snowboard','PZSnow','indywidualny'],
-        ['Biathlon','PZBiath','indywidualny'],
-        ['Łyżwiarstwo figurowe','PZŁF','indywidualny'],
-        // Studio
-        ['Joga','—','indywidualny'],
-        ['Pilates','—','indywidualny'],
-        ['Fitness','—','indywidualny'],
-        ['Taniec','PZTan','indywidualny'],
-        // Pozostałe
-        ['Strzelectwo','PZSS','indywidualny'],
-        ['Łucznictwo','PZŁucz','indywidualny'],
-        ['Wrotkarstwo','PZWrot','indywidualny'],
-        ['Żeglarstwo','PZŻegl','indywidualny'],
-        ['Jeździectwo','PZJezd','indywidualny'],
-        ['Golf','PZGolf','indywidualny'],
-        ['Szachy','PZSzach','indywidualny'],
-        ['Brydż sportowy','PZBryd','indywidualny'],
-        ['Taniec sportowy','PZTaniec','indywidualny'],
-        ['CrossFit','CrossFit','indywidualny'],
-      ];
+      $sports = require get_template_directory() . '/inc/sports-data.php';
       foreach ($sports as $s): ?>
         <div class="cd-sport">
-          <span class="cd-sport__name"><?php echo $s[0]; ?></span>
-          <span class="cd-sport__fed"><?php echo $s[1]; ?></span>
-          <span class="cd-badge cd-badge--<?php echo $s[2]==='drużynowy'?'team':'ind'; ?>"><?php echo $s[2]; ?></span>
+          <span class="cd-sport__name"><?php echo esc_html($s['name']); ?></span>
+          <span class="cd-sport__fed"><?php echo esc_html($s['fed']); ?></span>
+          <span class="cd-badge cd-badge--<?php echo $s['type']==='drużynowy'?'team':'ind'; ?>"><?php echo esc_html($s['type']); ?></span>
         </div>
       <?php endforeach; ?>
     </div>
